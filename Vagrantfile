@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
 
   # Bastion: 512MB RAM, 1 CPU, 10GB Disk, feste IP
   config.vm.define "bastion" do |bastion|
+    bastion.vm.provision "shell", name: "common", path: "provision_jumphost.sh"
     bastion.vm.hostname = "bastion"
     bastion.vm.network "private_network", ip: "192.168.56.10"
     bastion.vm.provider "virtualbox" do |vb|
