@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
           echo "exit code is $?"
       done < configs/machines.txt
     SHELL
-    #bastion.vm.provision "shell", name: "set_hostname", path: "set_hostnames.sh"
+    bastion.vm.provision "shell", name: "set_hostname", path: "set_hostnames.sh"
     end
   end
 
