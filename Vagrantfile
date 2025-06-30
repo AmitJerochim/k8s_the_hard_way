@@ -23,6 +23,7 @@ Vagrant.configure("2") do |config|
       done < configs/machines.txt
     SHELL
     bastion.vm.provision "shell", name: "set_hostname", path: "set_hostnames.sh"
+    bastion.vm.provision "shell", name: "make_machines_reachable_by_hostname.sh", path: "make_machines_reachable_by_hostname.sh"
     end
   end
 
